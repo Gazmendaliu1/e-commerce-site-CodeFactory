@@ -1,0 +1,136 @@
+* {
+    font-family: "Arimo", sans-serif;
+}
+
+/* #first {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 110px;
+} */
+
+#first {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 30px;
+}
+
+#image {
+    margin-right: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#hr1 {
+    padding: 0px;
+    margin: 0px
+}
+
+#img {
+    width: 400px;
+}
+
+#text {
+    margin-top: 80px;
+    /* margin-right: 110px; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#lastP {
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1080px) {
+    #first {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*--------- Our Team -----------*/
+
+#second {
+    margin: -70px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 0 0 90px;
+    text-decoration: underline;
+}
+
+#container {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: 20px;
+}
+
+.profile {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.profile:hover {
+    transform: translateY(25px);
+}
+
+.profile img {
+    max-width: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile:not(:first-child) img {
+    margin-left: -20px;
+}
+
+.profile .name {
+    position: static;
+    background-color: black;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 100px;
+    border: solid white 2px;
+    bottom: -80px;
+    left: 45%;
+    white-space: nowrap;
+    transform: translate(-50%, -50px);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.profile #olga {
+    /* margin-left: 55px; */
+    margin-left: 20%;
+}
+
+.profile #gazmend {
+    /* margin-left: 20px; */
+    margin-left: 7%;
+}
+
+.profile #christoph {
+    /* margin-left: 25px; */
+    margin-left: 9%;
+}
+
+.profile #narek {
+    /* margin-left: 35px; */
+    margin-left: 13%;
+}
+
+.profile #pritesh {
+    /* margin-left: 30px; */
+    margin-left: 11%;
+}
+
+.profile img:hover+.name {
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 20px 10px rgba(86, 86, 198, 0.3);
+}

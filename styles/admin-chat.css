@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#alert-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -100;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -110;
+  opacity: 0;
+  height: 350px;
+  width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+#alert .header {
+  font-size: 1.8rem;
+}
+#alert button {
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: 0;
+  background-color: rgb(173, 0, 0);
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  color: white;
+}
+#alert button:hover {
+  box-shadow: inset 0 0 0.6rem rgb(12, 12, 12);
+  cursor: pointer;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  padding: 0 1.5rem;
+  height: 60px;
+}
+nav a img {
+  height: 50px;
+  aspect-ratio: 1/1s;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+nav ul li {
+  list-style-type: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+}
+nav ul li a:hover {
+  cursor: pointer;
+}
+nav form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav form input {
+  border-top: 1px solid rgb(90, 90, 90);
+  border-left: 1px solid rgb(90, 90, 90);
+  border-bottom: 1px solid rgb(90, 90, 90);
+  border-right: 0;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  height: 32px;
+  width: 350px;
+  padding-left: 0.5rem;
+}
+nav form input:focus {
+  outline: 0;
+}
+nav form button {
+  border: 1px solid black;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: rgb(48, 48, 48);
+  height: 32px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s linear;
+}
+nav form button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+nav form button img {
+  width: 20px;
+  aspect-ratio: 1/1;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  box-shadow: none;
+  filter: invert(100%);
+}
+nav .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+nav .right a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: black;
+}
+nav .right a img {
+  width: 40px;
+  height: 40px;
+}
+nav .right a .login {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  transform: translateY(7%);
+}
+nav .right .login {
+  margin-right: 1rem;
+}
+
+main .heading {
+  text-align: center;
+  font-size: 2.2rem;
+  height: 70px;
+  padding: 0.5rem 0;
+}
+main .application {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  margin-top: 0;
+  border-top: 1px solid rgb(189, 189, 189);
+}
+main .application .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  min-width: 20vw;
+  max-width: 20vw;
+  border-right: 2px solid black;
+}
+main .application .left .header {
+  width: 100%;
+}
+main .application .left .header .user-header {
+  background-color: rgb(48, 48, 48);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  height: 70px;
+  color: white;
+}
+main .application .left .header form {
+  margin: 1rem 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .application .left .header form input {
+  height: 100%;
+  width: 75%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: 1px solid rgb(196, 196, 196);
+}
+main .application .left .header form input:focus {
+  outline: 1px solid grey;
+}
+main .application .left .user-container {
+  width: 100%;
+  overflow-y: hidden;
+}
+main .application .left .user-container .user {
+  border-top: 1px solid rgb(230, 230, 230);
+  width: 100%;
+  padding: 0.5rem 10% 0.5rem 0;
+  height: 60px;
+}
+main .application .left .user-container .user:hover {
+  background-color: rgb(231, 231, 231);
+  cursor: pointer;
+}
+main .application .left .user-container .user form {
+  width: 100%;
+  height: 100%;
+}
+main .application .left .user-container .user form input {
+  display: none;
+}
+main .application .left .user-container .user form button {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+}
+main .application .left .user-container .user form button:hover {
+  cursor: pointer;
+}
+main .application .left .user-container .user form button .user-profile-picture {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  margin-left: 10%;
+}
+main .application .left .user-container .user form button .user-name {
+  font-size: 1.2rem;
+  text-align: start;
+}
+main .application .left .user-container .selected {
+  background-color: rgb(172, 172, 172);
+}
+main .application .left .user-container .selected:hover {
+  background-color: grey;
+}
+main .application .left .scroll {
+  overflow-y: scroll;
+}
+main .application .left .scroll::-webkit-scrollbar {
+  width: 5px;
+}
+main .application .left .scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+main .application .left .scroll::-webkit-scrollbar-thumb {
+  background: rgb(156, 156, 156);
+  border-radius: 10px;
+}
+main .application .left .scroll::-webkit-scrollbar-thumb:hover {
+  background: #727272;
+}
+main .application .right {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .application .right .select-user {
+  font-size: 1.5rem;
+}
+main .application .right .header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10%;
+  height: 60px;
+  background-color: rgb(243, 243, 243);
+}
+main .application .right .header img {
+  height: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 22.5px;
+  margin-left: 8%;
+}
+main .application .right .header .user-name {
+  font-size: 1.3rem;
+}
+main .application .right .header #open-slideout, main .application .right .header #open-slideout2 {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%) rotate(90deg);
+  transition: all 0.4s ease-in-out;
+  z-index: 50;
+}
+main .application .right .header #open-slideout:hover, main .application .right .header #open-slideout2:hover {
+  cursor: pointer;
+}
+main .application .right .header #open-slideout2 {
+  visibility: hidden;
+  z-index: -50;
+}
+main .application .right #middle {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  overflow-y: scroll;
+}
+main .application .right #middle::-webkit-scrollbar {
+  width: 7px;
+}
+main .application .right #middle::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+main .application .right #middle::-webkit-scrollbar-thumb {
+  background: rgb(156, 156, 156);
+  border-radius: 10px;
+}
+main .application .right #middle::-webkit-scrollbar-thumb:hover {
+  background: #727272;
+}
+main .application .right #middle .message-container, main .application .right #middle .message-container2 {
+  width: 100%;
+  padding: 0.5rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main .application .right #middle .message-container .message, main .application .right #middle .message-container .message2, main .application .right #middle .message-container2 .message, main .application .right #middle .message-container2 .message2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 70%;
+  background-color: rgb(224, 255, 203);
+  border-radius: 15px;
+  box-shadow: 0 0.5rem 1rem rgba(5, 5, 5, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 0.2rem;
+}
+main .application .right #middle .message-container .message .message-top, main .application .right #middle .message-container .message2 .message-top, main .application .right #middle .message-container2 .message .message-top, main .application .right #middle .message-container2 .message2 .message-top {
+  height: 20px;
+  color: rgb(53, 53, 53);
+  padding: 0.2rem 1rem 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+main .application .right #middle .message-container .message .message-middle, main .application .right #middle .message-container .message2 .message-middle, main .application .right #middle .message-container2 .message .message-middle, main .application .right #middle .message-container2 .message2 .message-middle {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  color: rgb(0, 0, 0);
+}
+main .application .right #middle .message-container .message .message-bottom, main .application .right #middle .message-container .message2 .message-bottom, main .application .right #middle .message-container2 .message .message-bottom, main .application .right #middle .message-container2 .message2 .message-bottom {
+  height: 30px;
+  color: rgb(53, 53, 53);
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+main .application .right #middle .message-container .message .message-bottom p, main .application .right #middle .message-container .message2 .message-bottom p, main .application .right #middle .message-container2 .message .message-bottom p, main .application .right #middle .message-container2 .message2 .message-bottom p {
+  width: 100%;
+  text-align: end;
+  font-size: 0.6rem;
+}
+main .application .right #middle .message-container .message2, main .application .right #middle .message-container2 .message2 {
+  left: 1rem;
+  background-color: rgb(227, 244, 255);
+}
+main .application .right #middle .message-container .message2 .message-top, main .application .right #middle .message-container2 .message2 .message-top {
+  width: 100%;
+  text-align: end;
+  padding: 0.2rem 1rem 0.5rem 0;
+  color: rgb(0, 118, 186);
+}
+main .application .right #middle .message-container .message2 .message-top p, main .application .right #middle .message-container2 .message2 .message-top p {
+  text-align: end;
+}
+main .application .right #middle .message-container .message2 .message-bottom, main .application .right #middle .message-container2 .message2 .message-bottom {
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+main .application .right #middle .message-container .message2 .message-bottom p, main .application .right #middle .message-container2 .message2 .message-bottom p {
+  width: 100%;
+  text-align: start;
+}
+main .application .right #middle .message-container2 {
+  justify-content: flex-start;
+}
+main .application .right .bottom {
+  width: 100%;
+}
+main .application .right .bottom form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  border-top: 1px solid grey;
+}
+main .application .right .bottom form textarea {
+  border: 0;
+  width: 100%;
+  padding: 0.5rem;
+  height: 100%;
+  font-size: 1rem;
+  resize: none;
+}
+main .application .right .bottom form textarea:focus {
+  outline: 0;
+}
+main .application .right .bottom form textarea::-webkit-scrollbar {
+  width: 5px;
+}
+main .application .right .bottom form textarea::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+main .application .right .bottom form textarea::-webkit-scrollbar-thumb {
+  background: rgb(156, 156, 156);
+  border-radius: 10px;
+}
+main .application .right .bottom form textarea::-webkit-scrollbar-thumb:hover {
+  background: #727272;
+}
+main .application .right .bottom form button {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  width: 35px;
+  aspect-ratio: 1/1;
+  margin: 0 1rem;
+}
+main .application .right .bottom form button img {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+main .application .right .bottom form button img:hover {
+  cursor: pointer;
+}
+main .application .slideout {
+  position: relative;
+  width: 0px;
+  min-width: 0px;
+  height: 100%;
+  background-color: rgb(34, 34, 34);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+}
+main .application .slideout .header {
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 10%;
+  margin-right: -20rem;
+  transition: all 0.3s ease-in-out;
+}
+main .application .slideout .info-container {
+  margin-right: -20rem;
+  transition: all 0.3s ease-in-out;
+}
+main .application .slideout .info-container .user-profile-picture {
+  height: 8rem;
+  aspect-ratio: 1/1;
+  border-radius: 4rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 3rem auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+main .application .slideout .info-container p {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+main .application .slideout .info-container p span {
+  font-size: 1.1srem;
+  color: rgb(184, 184, 184);
+}
+main .application .slideout button {
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  transform: translateX(50%);
+  border: 0;
+  height: 60px;
+  width: 140px;
+  padding: 4px 15px;
+  border-radius: 15px;
+  background-color: rgb(63, 158, 0);
+  font-size: 1rem;
+  color: white;
+  transition: all 0.1s ease-in-out;
+  margin-right: -20rem;
+  transition: all 0.3s ease-in-out;
+}
+main .application .slideout button:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 0.6rem rgb(35, 85, 0);
+}/*# sourceMappingURL=admin-chat.css.map */
